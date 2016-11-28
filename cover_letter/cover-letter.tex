@@ -1,0 +1,32 @@
+\documentclass[brief]{scrlttr2}
+\usepackage{ae}
+
+\usepackage{lipsum}
+
+%% Addressant
+\newcommand{\adressant}{
+    \textbf{The company}\\
+    - to whom specifically -\\
+    Theirstreet 1\\
+    98765 Theirtown
+    }
+\setkomavar{subject}{\noindent{Application as a \LaTeX dude}
+    \\
+    \normalfont{To your job advertisement from November, 27. 2016}
+}
+\setkomavar{date}{November, 28. 2016}
+
+%\fontfamily{hv}
+%\selectfont
+%\renewcommand{\familydefault}{\rmdefault}
+
+\begin{document}
+\begin{letter}{\adressant}
+%\sffamily
+\opening{Dear future Bosses,}
+\vspace{-0.7em}
+\lipsum[2-4]
+\closing{Yours, sincerely}
+\encl{Curriculim Vitae\\Credentials}
+\end{letter}
+\end{document}

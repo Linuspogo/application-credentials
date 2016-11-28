@@ -1,0 +1,66 @@
+\documentclass{scrartcl}
+\KOMAoptions{%%
+    fontsize = 12pt,
+    paper = a4,
+    DIV=12,
+}
+\usepackage[left=2cm,textwidth=17cm, voffset=-2.77cm, footskip=10cm, bottom=-5cm]{geometry}
+
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+
+\usepackage{graphicx}
+
+\usepackage[usenames,dvipsnames]{xcolor}
+\definecolor{mycolor}{rgb}{.10, 0.5, 0.8}
+\newcommand{\colorOne}{mycolor}
+
+\usepackage{hyperref}
+\hypersetup{breaklinks}
+\hypersetup{pdfborder={0 0 0}} % Set Color
+%\titlehead{was}
+
+\usepackage{lmodern}
+%\hypersetup{breaklinks}
+%\hypersetup{pdfborder={0 0 0}} % Set Color
+%\reversemarginpar %Move margin to the left
+
+\date{}
+\newlength{\boxA}\settowidth{\boxA}{Geburtsdatum und ort}
+\newlength{\boxB}\settowidth{\boxB}{So lange muss diese Zeile sein oder sogar länger, mal gucken noch}
+\newlength{\boxC}\settowidth{\boxC}{So lange muss diese Zeile sein oder sogar länger, mal gucken noch etwas mehr mehr}
+\newcommand{\NewData}[2]{\noindent \parbox{\boxA}{#1}\hspace{1em}#2\vspace{0em}}
+\newcommand{\NewEntry}[2]{\noindent \parbox[t]{\boxA}{#1}\hspace{1em}\parbox[t]{\boxB}{#2}}
+\newcommand{\NewAnlage}[2]{\noindent \parbox[t]{\boxC}{#1}\hspace{1em}\parbox[t]{\boxA}{#2}}
+\begin{document}
+\pagestyle{empty}
+\noindent \textcolor{black}{\Large Cover Sheet for Credentials}\vspace{-0.27em}
+\\
+\rule{\textwidth}{0.04em}\vspace{1em}
+
+\vspace{1em}
+
+\NewData{\textcolor{\colorOne}{\textbf{Studies}}}{~}
+
+\vspace{1em}
+
+\NewAnlage{Master of Science in \LaTeX}{Page 2}
+
+\vspace{1em}
+
+\NewAnlage{Bachelor of Science in \texttt{text}-files }{Page 5}
+
+\vspace{1.5em}
+
+\NewData{\textcolor{\colorOne}{\textbf{Work}}}{~}
+
+\vspace{1em}
+
+\NewAnlage{Internship at Internet}{Page 8}
+    
+
+
+\end{document}
+    

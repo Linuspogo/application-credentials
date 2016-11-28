@@ -1,0 +1,144 @@
+\documentclass{scrartcl}
+\KOMAoptions{%%
+    fontsize = 12pt,
+    paper = a4,
+    DIV=12,
+}
+\usepackage[left=2cm,textwidth=17cm, voffset=-2.77cm, footskip=10cm, bottom=-5cm]{geometry}
+
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+
+\usepackage{graphicx}
+
+\usepackage[usenames,dvipsnames]{xcolor}
+\definecolor{mycolor}{rgb}{.10, 0.5, 0.8}
+\newcommand{\colorOne}{mycolor}
+
+\usepackage{hyperref}
+\hypersetup{breaklinks}
+\hypersetup{pdfborder={0 0 0}} % Set Color
+%\titlehead{was}
+
+\usepackage{lmodern}
+%\hypersetup{breaklinks}
+%\hypersetup{pdfborder={0 0 0}} % Set Color
+%\reversemarginpar %Move margin to the left
+
+\date{}
+\newlength{\boxA}\settowidth{\boxA}{Geburtsdatum und ort}
+\newlength{\boxB}\settowidth{\boxB}{So lange muss diese Zeile sein oder sogar länger, mal gucken noch}
+\newcommand{\NewData}[2]{\noindent \parbox{\boxA}{#1}\hspace{1em}#2\vspace{0.5em}}
+\newcommand{\NewEntry}[2]{\noindent \parbox[t]{\boxA}{#1}\hspace{1em}\parbox[t]{\boxB}{#2}}
+
+\begin{document}
+    \pagestyle{empty}
+    \noindent \textcolor{\colorOne}{\Large Curriculum Vitae}\vspace{-0.27em}
+    \\
+    {\rule{\textwidth}{0.04em}
+    \\ \vspace{-1.3em}
+    \begin{figure}[htbp]
+        \begin{minipage}{0.7\textwidth}
+            \NewData{Name}{Your name}
+            
+            \NewData{Adress}{Yourstreet 1\\ \hspace{0.5em} \parbox{\boxA}{~}\hspace{1em}12345 Yourtown}
+            
+            \NewData{Phone}{1234~1234567}
+            
+            \NewData{Mobile}{4321~7654321}
+            
+            \NewData{Email}{\href{mailto:yourmail@0.de}{yourmail@0.de}}
+            
+            \NewData{Birthday /-town}{Birthday in Birthtown}
+            
+%            \NewData{Familienstand}{ledig}
+            
+            \NewData{Nationality}{Yourcountry}
+            
+        \end{minipage}
+        \hspace{2.2em}
+        \begin{minipage}{0.2\textwidth}
+            \centering
+            \includegraphics[width=38mm]{photoA.jpg}
+        \end{minipage}
+    \end{figure}
+
+\vspace{1em}
+
+\NewEntry{\textcolor{\colorOne}{\textbf{Career}}}{~}
+
+\vspace{1em}
+
+\NewEntry{from~-~to}{
+    \textbf{M.Sc. \LaTeX}, University of Internet
+    \\
+    Lorem ipsum dolor sit amet
+    \\
+    consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+    \\
+    Grade: nice
+}
+
+\vspace{1em}
+
+\NewEntry{from~-~to}{Went to school}
+
+\vspace{1em}
+
+\NewEntry{\textcolor{\colorOne}{\textbf{Internships}}}{~}
+
+\vspace{1em}
+
+\NewEntry{from~-~to}{
+    magna aliquyam erat, sed diam voluptua.\\
+    At vero eos et accusam et justo duo\\
+    dolores et ea rebum. Stet clita kasd gubergren,
+}
+\vspace{1em}
+
+\NewEntry{from~-~to}{
+     amet, consetetur sadipscing elitr,\\
+      sed diam nonumy eirmod tempor\\
+      invidunt ut labore et dolore
+}
+
+\vspace{1em}
+
+\NewEntry{\textcolor{\colorOne}{\textbf{Publications}}}{
+    Copy paste random search engine}
+
+\vspace{1em}
+
+\NewEntry{\textcolor{\colorOne}{\textbf{Languages}}}{
+    Tikmata: sanctus
+    \\
+    Lorem: est
+    \\
+    Dolor: sit}
+
+\vspace{1em}
+
+\vspace{1em}
+
+\NewEntry{\textcolor{\colorOne}{\textbf{Computer Languages}}}{
+    Professional: \textit{Plankalkül}
+    \\
+    Basic Knowledge in \textit{Googling how things work}
+}   
+
+\vspace{1em}
+
+\NewEntry{\textcolor{\colorOne}{\textbf{Interests}}}{
+    Cat Memes, Fail Videos, Couchsurfing}
+
+\vspace{2em}
+
+\NewEntry{~}{
+    \includegraphics[scale=0.1]{signatureArranged.jpg}
+    \\
+    Yourtown, November, 28. 2016
+}
+
+\end{document}
