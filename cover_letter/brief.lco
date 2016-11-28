@@ -1,0 +1,118 @@
+\ProvidesFile{brief.lco}[28-11-2016]
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\hypersetup{breaklinks}
+\hypersetup{pdfborder={0 0 0}} % Set Color to white -> nobody sees
+\usepackage{marvosym} % Symbole für Telefon, Mail, ...
+
+
+
+\KOMAoptions{%%
+    % Layout
+    fontsize=12pt,
+    paper=a4,
+    %    fromalign=center,
+    backaddress=off,
+    parskip=half,
+    enlargefirstpage=true,
+    %    headsepline=on,%%         Linie unter der Seitenzahl
+    %    parskip=half,%%           Abstand zwischen Absaetzen
+    %---------------------------------------------------------------------------
+    % Briefkopf und Anschrift
+    %    fromalign=right,%%        Plazierung des Briefkopfs
+    %    fromphone=on,%%           Telefonnummer im Absender
+    %    frommobilephone=on,
+    % fromrule=on,%%           Linie im Absender (aftername, afteraddress)
+    %    fromfax=off,%%            Faxnummer
+    fromemail=off,%%          Emailadresse
+    %    fromurl=off,%%            Homepage
+    %    fromlogo=off,%%           Firmenlogo
+    %        addrfield=topaligned,%%           Adressfeld fuer Fensterkuverts
+    subject=beforeopening,%%  Plazierung der Betreffzeile
+    %    locfield=narrow,%%        zusaetzliches Feld fuer Absender
+    foldmarks=off%%           Faltmarken setzen
+    %        numericaldate=off,%%      Datum numerisch ausgeben
+    %        refline=narrow,%%         Geschaeftszeile im Satzspiegel
+}
+
+%% Farben
+\usepackage[usenames,dvipsnames]{xcolor}
+\definecolor{col}{rgb}{.10, 0.5, 0.8}
+\newcommand{\colorOne}{col}
+
+%% Koma Vars
+\setkomavar{fromname}{Your Name}
+\setkomavar{fromaddress}{Your Street 1\\12345 Yourtown}
+\setkomavar{fromphone}[Telefon:]{1234~12345678}
+\newkomavar[Mobil]{mobilphone}
+\setkomavar{mobilphone}[Mobil:]{4321~87654321}
+\setkomavar{fromemail}[\Letter]{\href{mailto:yourmail@foo.de}{foo@bar.de}}
+
+\setkomavar{signature}{Your Name}
+\setkomavar{subject}{\sffamily Application as ...}
+\setkomavar{place}{Yourtown}
+\setkomavar{date}{November 28, 2016}
+%\addtokomafont{subject}{\sffamily}
+%\setkomafont{fromname}{\sffamily}
+%\setkomafont{fromaddress}{\sffamily}
+%\setkomafont{backaddress}{\sffamily}
+\let\raggedsignature=\raggedright
+
+\usepackage{lmodern} 
+
+\newkomavar{frommobile}% 
+\newkomavar{mobileseparator}% 
+\setkomavar{mobileseparator}{\usekomavar{phoneseparator}}% 
+\setkomavar*{mobileseparator}{Mobil}% 
+\setkomavar*{frommobile}{\usekomavar*{mobileseparator}\usekomavar{mobileseparator}}% 
+
+\firsthead{%
+%\sffamily
+\textcolor{\colorOne}{\Large\usekomavar{fromname}}\vspace{-0.25em}
+\\
+%{\usekomafont{fromrule}\rule{\textwidth}{\useplength{fromrulethickness}}}\vspace{0.5em}
+{\rule{\textwidth}{0.04em}}\vspace{0.5em}
+\\
+\parbox[t]{0.7\useplength{firstheadwidth}}{% 
+\usekomavar{fromaddress}% 
+}%
+\parbox[t]{0.3\useplength{firstheadwidth}}{% 
+\usekomavar*{fromphone} \usekomavar{fromphone}\\% 
+\usekomavar*{mobilphone} \usekomavar{mobilphone}\\% 
+\usekomavar*{fromemail} \usekomavar{fromemail}%
+}% 
+}% 
+
+
+
+\makeatletter
+\@addtoplength{toaddrvpos}{-2cm}
+\@addtoplength{refvpos}{-3.5cm}
+\@addtoplength{firstfootvpos}{2.2cm}
+%\@addtoplength{\baselineskip}{-3cm}
+%\setlength{\@tempskipd}{-2cm}%
+%\@addtoplength{toaddrvpos}{\addrlaenge}
+%\@addtoplength{toaddrheight}{-4cm}
+\@addtoplength{subjectaftervskip}{-0.5cm}
+\makeatother
+
+\setkomavar{signature}{
+\\
+\vspace{-1.25cm}
+\includegraphics[scale=0.1]{signatureArranged.jpg}
+\\
+\usekomavar{fromname}
+}
+
+\renewcaptionname{ngerman}{\enclname}{Enclosures}
+\setkomavar{enclseparator}{~}
+
+%\newlength{\databox}\settowidth{\databox}{anlagenbm}
+%\newcommand{\Anlagen}[2]{\noindent \parbox{\databox}{#1}\hspace{0.0em}#2}
+
+%\usepackage[bottom=-5cm]{geometry}
+%\enlargethispage{5cm}
