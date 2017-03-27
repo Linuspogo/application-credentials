@@ -28,7 +28,7 @@
 %\reversemarginpar %Move margin to the left
 
 \date{}
-\newlength{\boxA}\settowidth{\boxA}{Geburtsdatum und ort}
+\newlength{\boxA}\settowidth{\boxA}{\textbf{Computer Skills}}
 \newlength{\boxB}\settowidth{\boxB}{So lange muss diese Zeile sein oder sogar länger, mal gucken noch}
 \newcommand{\NewData}[2]{\noindent \parbox{\boxA}{#1}\hspace{1em}#2\vspace{0.5em}}
 \newcommand{\NewEntry}[2]{\noindent \parbox[t]{\boxA}{#1}\hspace{1em}\parbox[t]{\boxB}{#2}}
@@ -45,13 +45,13 @@
             
             \NewData{Adress}{Yourstreet 1\\ \hspace{0.5em} \parbox{\boxA}{~}\hspace{1em}12345 Yourtown}
             
-            \NewData{Phone}{1234~1234567}
+            \NewData{Phone}{\href{tel:+4912341234567}{+49\,1234\,1234567}}
             
-            \NewData{Mobile}{4321~7654321}
+            \NewData{Mobile}{\href{tel:+4943217654321}{+49\,4321\,7654321}}
             
             \NewData{Email}{\href{mailto:yourmail@0.de}{yourmail@0.de}}
             
-            \NewData{Birthday /-town}{Birthday in Birthtown}
+            \NewData{Born}{Birthday in Birthtown}
             
 %            \NewData{Familienstand}{ledig}
             
@@ -122,7 +122,7 @@
 
 \vspace{1em}
 
-\NewEntry{\textcolor{\colorOne}{\textbf{Computer Languages}}}{
+\NewEntry{\textcolor{\colorOne}{\textbf{Computer Skills}}}{
     Professional: \textit{Plankalkül}
     \\
     Basic Knowledge in \textit{Googling how things work}
